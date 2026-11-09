@@ -1,0 +1,17 @@
+{
+  "name": "Xoriguer Aparcament",
+  "short_name": "Aparcament",
+  "description": "On he aparcat el cotxe? Guarda la posició, troba el cotxe i controla el parquímetre.",
+  "lang": "ca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0B0E",
+  "theme_color": "#0A0B0E",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

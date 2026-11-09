@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Xoriguer Aparcament</title>
+  <meta name="description" content="On he aparcat el cotxe? Guarda la posició, troba el cotxe i controla el parquímetre.">
+  <meta name="theme-color" content="#0A0B0E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Aparcament">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="capcalera">
+    <img src="icons/falco.png" alt="" class="capcalera-simbol">
+    <div class="capcalera-text">
+      <span class="marca"><b class="x">X</b>ORIGUER</span>
+      <span class="submarca">APARCAMENT</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ESTAT 1: sense cotxe guardat -->
+    <section id="vista-buida" class="vista">
+      <img src="icons/simbol.png" alt="Falcó, cotxe i parquímetre" class="heroi">
+      <button id="btn-aparcar" class="boto-gran">
+        <span class="boto-gran-icona">P</span>
+        <span>He aparcat aquí</span>
+      </button>
+      <p id="estat-gps" class="petit"></p>
+    </section>
+
+    <!-- ESTAT 2: cotxe guardat -->
+    <section id="vista-cotxe" class="vista" hidden>
+      <div id="mapa"></div>
+      <div class="dades">
+        <div class="dada"><span class="etiqueta">Distància</span><span id="distancia" class="valor">—</span></div>
+        <div class="dada"><span class="etiqueta">Direcció</span><span class="valor"><span id="fletxa" class="fletxa">↑</span> <span id="rumb">—</span></span></div>
+        <div class="dada"><span class="etiqueta">Aparcat</span><span id="hora-aparcat" class="valor">—</span></div>
+      </div>
+      <p id="precisio" class="petit"></p>
+
+      <div class="fila-botons">
+        <a id="btn-navegar" class="boto" target="_blank" rel="noopener">🧭 Com hi arribo</a>
+        <button id="btn-compartir" class="boto boto-sec">Compartir</button>
+      </div>
+
+      <details class="targeta" id="targeta-nota">
+        <summary>📝 Nota i foto <span id="resum-nota" class="petit"></span></summary>
+        <textarea id="nota" rows="2" placeholder="Planta -2, plaça 47, columna blava…"></textarea>
+        <div class="fila-botons">
+          <label class="boto boto-sec">📷 Foto
+            <input type="file" id="foto-input" accept="image/*" capture="environment" hidden>
+          </label>
+          <button id="btn-treure-foto" class="boto boto-sec" hidden>Treure foto</button>
+        </div>
+        <img id="foto" alt="Foto del lloc d'aparcament" hidden>
+      </details>
+
+      <!-- Parquímetre -->
+      <div class="targeta parquimetre">
+        <div class="pq-cap">
+          <svg viewBox="0 0 100 100" class="pq-esfera" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="#F6EFE2"/>
+            <path id="pq-arc" d="" fill="#F2650F"/>
+            <circle cx="50" cy="50" r="22" fill="#F6EFE2"/>
+            <line id="pq-agulla" x1="50" y1="50" x2="50" y2="10" stroke="#0A0B0E" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="5" fill="#0A0B0E"/>
+          </svg>
+          <div class="pq-info">
+            <span class="etiqueta">Parquímetre</span>
+            <span id="pq-temps" class="pq-temps">Sense tiquet</span>
+            <span id="pq-fins" class="petit"></span>
+          </div>
+        </div>
+        <div id="pq-opcions" class="pq-opcions">
+          <button class="xip" data-min="30">30 min</button>
+          <button class="xip" data-min="60">1 h</button>
+          <button class="xip" data-min="90">1 h 30</button>
+          <button class="xip" data-min="120">2 h</button>
+          <input id="pq-hora" type="time" aria-label="Hora de fi del tiquet" title="Hora de fi">
+        </div>
+        <div id="pq-accions" class="fila-botons" hidden>
+          <button id="pq-calendari" class="boto boto-sec">📅 Alarma al calendari</button>
+          <button id="pq-cancel" class="boto boto-sec">Treure tiquet</button>
+        </div>
+      </div>
+
+      <button id="btn-recollit" class="boto boto-perill">✔ Ja tinc el cotxe</button>
+    </section>
+
+    <details class="targeta" id="historial-caixa">
+      <summary>🕓 Historial</summary>
+      <ol id="historial"></ol>
+    </details>
+  </main>
+
+  <footer class="peu">Xoriguer Aparcament · v1.0</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

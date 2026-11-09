@@ -1,0 +1,46 @@
+XORIGUER APARCAMENT  ·  v1.0
+============================
+App per al mòbil (PWA) per recordar on has aparcat el cotxe.
+
+QUÈ FA
+- "He aparcat aquí": guarda la posició GPS (agafa la lectura més precisa en uns segons).
+- Mapa amb el cotxe i la teva posició, distància i direcció.
+- El pin del cotxe es pot arrossegar per corregir la posició.
+- "Com hi arribo": obre Google Maps (Android) o Apple Maps (iPhone) a peu.
+- Nota (planta, plaça…) i foto del lloc.
+- Parquímetre: compte enrere, avís 10 minuts abans i quan s'acaba.
+  "Alarma al calendari" crea un esdeveniment amb avisos: és l'opció fiable
+  si l'app està tancada (sobretot a l'iPhone).
+- Historial dels últims 15 aparcaments.
+- Tot es guarda només al mòbil (localStorage). No s'envia res enlloc.
+
+FITXERS
+- index.html, app.css, app.js  -> l'app
+- manifest.webmanifest, sw.js  -> instal·lació i funcionament sense connexió
+- icons/                       -> logo i icones
+- eines/genera_icones.py       -> regenera les icones (python eines/genera_icones.py)
+
+PROVAR A L'ORDINADOR
+  python -m http.server 8791
+  i obrir http://localhost:8791
+
+PUBLICAR (cal https perquè el GPS funcioni al mòbil)
+Opció fàcil: GitHub Pages
+  1. Crear un repositori a GitHub (p. ex. "xoriguer-aparcament") i pujar-hi aquesta carpeta.
+  2. Settings > Pages > Branch: main / (root) > Save.
+  3. L'adreça serà https://<usuari>.github.io/xoriguer-aparcament/
+
+INSTAL·LAR AL MÒBIL
+- Android (Chrome): obrir l'adreça > menú ⋮ > "Afegeix a la pantalla d'inici" / "Instal·la l'aplicació".
+- iPhone (Safari): obrir l'adreça > botó Compartir > "Afegir a la pantalla d'inici".
+  Els avisos del parquímetre a l'iPhone només funcionen amb l'app afegida a la pantalla d'inici.
+
+LIMITACIONS
+- Als pàrquings soterrats el GPS pot fallar: guarda la posició abans d'entrar
+  o fes servir la nota i la foto.
+- Els avisos dins l'app només sonen si l'app està oberta o en segon pla recent;
+  per a un avís segur fes servir "Alarma al calendari".
+
+CANVIS DE VERSIÓ
+Quan modifiquis fitxers, canvia VERSIO a sw.js (xa-v1 -> xa-v2) perquè els mòbils
+descarreguin la versió nova.
