@@ -16,7 +16,7 @@ html, body { margin: 0; }
 body {
   background: var(--fons);
   color: var(--crema);
-  font-family: Arial, "Helvetica Neue", system-ui, sans-serif;
+  font-family: "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif;
   min-height: 100dvh;
   padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
   -webkit-tap-highlight-color: transparent;
@@ -46,21 +46,21 @@ main { max-width: 560px; margin: 0 auto; padding: 16px; display: flex; flex-dire
   width: 100%; max-width: 380px; padding: 22px 20px;
   border: 0; border-radius: 22px;
   background: linear-gradient(90deg, var(--taronja-fosc), var(--taronja));
-  color: var(--fons); font: 700 italic 24px Arial, sans-serif;
+  color: var(--fons); font: 700 italic 24px "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif;
   box-shadow: 0 6px 24px rgba(242, 101, 15, .35);
   cursor: pointer;
 }
 .boto-gran:active { transform: scale(.98); }
 .boto-gran-icona {
   display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px;
-  background: var(--fons); color: var(--taronja); font: 700 28px Arial, sans-serif; font-style: normal;
+  background: var(--fons); color: var(--taronja); font: 700 28px "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif; font-style: normal;
 }
 
 .boto {
   flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 13px 14px; border-radius: 12px; border: 0;
   background: var(--taronja); color: var(--fons);
-  font: 700 16px Arial, sans-serif; text-decoration: none; cursor: pointer;
+  font: 700 16px "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif; text-decoration: none; cursor: pointer;
 }
 .boto:active { background: var(--taronja-fosc); }
 .boto-sec { background: var(--fons-3); color: var(--crema); border: 1px solid #2E323B; }
@@ -73,7 +73,7 @@ main { max-width: 560px; margin: 0 auto; padding: 16px; display: flex; flex-dire
   height: 42vh; min-height: 260px; border-radius: var(--radi);
   border: 2px solid var(--fons-3); background: var(--fons-2);
 }
-.leaflet-container { font-family: Arial, sans-serif; background: #1a1c21; }
+.leaflet-container { font-family: "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif; background: #1a1c21; }
 /* Mapa OSM en mode fosc */
 .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.6); }
 .marcador-cotxe, .marcador-jo { background: none; border: 0; }
@@ -103,7 +103,7 @@ details.targeta > *:not(summary) + * { margin-top: 10px; }
 
 textarea, input[type=time] {
   width: 100%; background: var(--fons); color: var(--crema);
-  border: 1px solid #2E323B; border-radius: 10px; padding: 10px; font: 16px Arial, sans-serif;
+  border: 1px solid #2E323B; border-radius: 10px; padding: 10px; font: 16px "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif;
 }
 textarea:focus, input:focus { outline: 2px solid var(--taronja); border-color: transparent; }
 #foto { width: 100%; border-radius: 12px; }
@@ -120,7 +120,7 @@ textarea:focus, input:focus { outline: 2px solid var(--taronja); border-color: t
 .pq-opcions input[type=time] { width: auto; flex: 1; min-width: 110px; padding: 8px; }
 .xip {
   padding: 9px 13px; border-radius: 999px; border: 1px solid var(--taronja);
-  background: transparent; color: var(--taronja); font: 700 14px Arial, sans-serif; cursor: pointer;
+  background: transparent; color: var(--taronja); font: 700 14px "Segoe UI", "Segoe UI Variable", Roboto, system-ui, sans-serif; cursor: pointer;
 }
 .xip:active { background: var(--taronja); color: var(--fons); }
 

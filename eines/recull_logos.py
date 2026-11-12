@@ -21,6 +21,7 @@ FONTS = {
     "XoriguerGasolina": ["xoriguer-gasolina/icons", "xoriguer-gasolina/eines"],
     "Web-xorigu3r.github.io": ["xorigu3r.github.io/img"],
     "XoriguerAparcament": ["XoriguerAparcament/icons"],
+    "XoriguerNotificacions": ["Xoriguer-Notificacions/www/icons"],
 }
 EXCLOU = {"marbre.jpg"}  # textures, no logos
 

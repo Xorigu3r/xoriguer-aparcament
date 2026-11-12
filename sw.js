@@ -1,7 +1,7 @@
 /* Service worker: l'app funciona sense connexió (el mapa necessita xarxa). */
-const VERSIO = 'xa-v1';
+const VERSIO = 'xa-v2';
 const FITXERS = [
-  './', 'index.html', 'app.css', 'app.js', 'manifest.webmanifest',
+  './', 'index.html', 'app.css', 'marca/marca.css', 'marca/Montserrat-ExtraBold.ttf', 'app.js', 'manifest.webmanifest',
   'icons/simbol.png', 'icons/falco.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon.png', 'icons/apple-touch-icon.png',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'

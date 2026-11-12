@@ -5,7 +5,10 @@ La geometria (en unitats d'un llenç de 512) és la mateixa que la de icons/logo
 """
 import math
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
+import sys
+sys.path.insert(0, "C:/Users/Xorigu3r/Documents/LOGOS-XORIGUER/_eines")
+import marca  # noqa: E402
 
 ARREL = Path(__file__).resolve().parent.parent
 ICONS = ARREL / "icons"
@@ -147,21 +150,9 @@ def logo_complet(mida=1024):
     im = Image.new("RGBA", (mida, mida), FONS)
     simbol = dibuixa(700, amb_fons=False)
     im.alpha_composite(simbol, ((mida - 700) // 2, 40))
-    fonts = Path("C:/Windows/Fonts")
-    f1 = ImageFont.truetype(str(fonts / "arialbi.ttf"), 132)
-    f2 = ImageFont.truetype(str(fonts / "arialbd.ttf"), 54)
-    d = ImageDraw.Draw(im)
-    w = d.textlength("XORIGUER", font=f1)
-    x = (mida - w) / 2
-    d.text((x, 730), "X", font=f1, fill=TARONJA)
-    d.text((x + d.textlength("X", font=f1), 730), "ORIGUER", font=f1, fill=CREMA)
-    txt = "APARCAMENT"
-    esp = 18
-    total = sum(d.textlength(c, font=f2) for c in txt) + esp * (len(txt) - 1)
-    x = (mida - total) / 2
-    for c in txt:
-        d.text((x, 890), c, font=f2, fill=TARONJA)
-        x += d.textlength(c, font=f2) + esp
+    # Rètol de la marca (LOGOS-XORIGUER/_eines/marca.py): X original + Montserrat ExtraBold + Segoe UI
+    rt = marca.rotul("XORIGUER", "APARCAMENT", amplada=int(mida * 0.74))
+    marca.enganxa(im, rt, mida / 2, mida * 0.835 - rt.height / 2)
     return im
 
 
