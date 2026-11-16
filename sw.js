@@ -1,5 +1,5 @@
 /* Service worker: l'app funciona sense connexió (el mapa necessita xarxa). */
-const VERSIO = 'xa-v2-icones';
+const VERSIO = 'xa-v3-actualitza';
 const FITXERS = [
   './', 'index.html', 'app.css', 'marca/marca.css', 'marca/Montserrat-ExtraBold.ttf', 'app.js', 'manifest.webmanifest',
   'icons/simbol.png', 'icons/falco.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon.png', 'icons/apple-touch-icon.png',
